@@ -7,7 +7,7 @@ public class Person {
 
     protected Person receiver;
 
-    protected ArrayList<Person> restrictedGift = new ArrayList<Person>();
+    protected ArrayList<Person> restrictedGift = new ArrayList<>();
 
     public Person(String name, String email){
         this.name = name;

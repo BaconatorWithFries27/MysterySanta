@@ -6,7 +6,7 @@ import java.util.Random;
 public class Main {
     public static Scanner scn = new Scanner(System.in);
     private static int option = -1;
-    private static ArrayList<Person> people = new ArrayList<Person>();
+    private static ArrayList<Person> people = new ArrayList<>();
 
 
     public static void main(String[] args) {
@@ -104,7 +104,7 @@ public class Main {
 
     public static void createList(){
         Random random = new Random();
-        ArrayList<Person> assigned = new ArrayList<Person>();
+        ArrayList<Person> assigned = new ArrayList<>();
         int tries = 0;
         for (int i = 0; i < people.size(); i++) {
             Person setRec = people.get(random.nextInt(people.size()));
