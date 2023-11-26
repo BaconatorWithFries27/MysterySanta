@@ -1,3 +1,9 @@
+import org.simplejavamail.api.email.Email;
+import org.simplejavamail.api.mailer.Mailer;
+import org.simplejavamail.api.mailer.config.TransportStrategy;
+import org.simplejavamail.email.EmailBuilder;
+import org.simplejavamail.mailer.MailerBuilder;
+
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -49,7 +55,7 @@ public class Main {
         System.out.println("2: View/Edit Person");
         System.out.println("3: Create/Edit Restrictions");
         System.out.println("4: Generate List");
-        System.out.println("5: Export List");
+        System.out.println("5: Print List");
         System.out.println("6: Send List");
         System.out.println("7: Exit");
         System.out.println("---------------------------");
@@ -122,7 +128,31 @@ public class Main {
         }
     }
 
-    public static void sendList(){}
+    public static void sendList(){
+        try {
+            System.out.println();
+            System.out.println("Enter sending address: ");
+            String emailOut = scn.next();
+            System.out.println("Enter account password: ");
+            String emailPass = scn.next();
+            Mailer mailer = MailerBuilder
+                    .withSMTPServer("smtp.gmail.com", 587, emailOut, emailPass)
+                    .withTransportStrategy(TransportStrategy.SMTP_TLS)
+                    .buildMailer();
+            for (int i = 0; i < people.size(); i++) {
+                Email email = EmailBuilder.startingBlank()
+                        .from("Alex West", "awest@postech.info")
+                        .to(people.get(i).getName(), people.get(i).getEmail())
+                        .withSubject("Mystery Santa")
+                        .withPlainText(people.get(i).printSanta())
+                        .buildEmail();
+                mailer.sendMail(email);
+            }
+        }
+        catch (Exception e){
+            System.out.println("Error, try again");
+        }
+    }
 
     public static void exportList(){
         for (int i = 0; i < people.size(); i++) {

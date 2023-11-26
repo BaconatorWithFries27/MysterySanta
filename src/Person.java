@@ -47,7 +47,7 @@ public class Person {
     }
 
     public String printSanta(){
-        return (name +", you have " + receiver + " for Mystery Santa");
+        return (name +", you have " + receiver.name + " for Mystery Santa");
     }
 
 }

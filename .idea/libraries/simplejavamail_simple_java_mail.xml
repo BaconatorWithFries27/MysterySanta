@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="simplejavamail.simple.java.mail" type="repository">
+    <properties maven-id="org.simplejavamail:simple-java-mail:8.3.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/simple-java-mail-8.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/core-module-8.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.mail-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.activation-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jmail-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jetbrains-runtime-annotations-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/throwing-function-1.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.32.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/simple-java-mail-8.3.2-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/core-module-8.3.2-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.mail-2.0.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.activation-2.0.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jmail-1.4.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jetbrains-runtime-annotations-1.0.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/throwing-function-1.5.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.32-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
