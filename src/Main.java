@@ -139,6 +139,8 @@ public class Main {
     public static void sendList(){
         try {
             System.out.println();
+            System.out.println("Enter sender's name: ");
+            String emailName = scn.next();
             System.out.println("Enter sending address: ");
             String emailOut = scn.next();
             System.out.println("Enter account password: ");
@@ -149,7 +151,7 @@ public class Main {
                     .buildMailer();
             for (int i = 0; i < people.size(); i++) {
                 Email email = EmailBuilder.startingBlank()
-                        .from("Alex West", "awest@postech.info")
+                        .from(emailName, emailOut)
                         .to(people.get(i).getName(), people.get(i).getEmail())
                         .withSubject("Mystery Santa")
                         .withPlainText(people.get(i).printSanta())
