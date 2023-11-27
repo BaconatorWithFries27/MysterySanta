@@ -3,6 +3,10 @@ import org.simplejavamail.api.mailer.Mailer;
 import org.simplejavamail.api.mailer.config.TransportStrategy;
 import org.simplejavamail.email.EmailBuilder;
 import org.simplejavamail.mailer.MailerBuilder;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -15,7 +19,7 @@ public class Main {
     private static ArrayList<Person> people = new ArrayList<>();
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         while (true) {
             printOptions();
             option = scn.nextInt();
@@ -40,6 +44,9 @@ public class Main {
                     sendList();
                     break;
                 case 7:
+                    writeToFile();
+                    break;
+                case 8:
                     System.exit(0);
                 default:
                     throw new IllegalStateException("Unexpected value: " + option);
@@ -57,7 +64,8 @@ public class Main {
         System.out.println("4: Generate List");
         System.out.println("5: Print List");
         System.out.println("6: Send List");
-        System.out.println("7: Exit");
+        System.out.println("7: Save List");
+        System.out.println("8: Exit");
         System.out.println("---------------------------");
         System.out.println("Enter Option:");
     }
@@ -160,6 +168,24 @@ public class Main {
         }
     }
 
+    public static void writeToFile() throws IOException{
+
+        String directory = System.getProperty("user.dir"); //get the current working directory, the directory from where your program was launched
+        String fileName = "MysterySanta.txt";
+        String absolutePath = directory + File.separator + "src" + File.separator + fileName;
+        File file = new File(absolutePath);
+
+        try (BufferedWriter fw = new BufferedWriter(new FileWriter(absolutePath))) {
+            for (int i = 0; i < people.size(); i++) {
+                fw.write(people.get(i).printSanta()+"\n");
+            }
+        }
+        catch (Exception e) {
+            System.out.println("Error");
+            return;
+        }
+        System.out.println("File saved to: " + absolutePath);
+    }
 
 
 }
